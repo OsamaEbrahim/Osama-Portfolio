@@ -1,0 +1,89 @@
+@layer tokens, reset, base, layout, components, sections, responsive, print;
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-variable.woff2") format("woff2-variations");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("../fonts/playfair-display-variable.woff2") format("woff2-variations");
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+@layer tokens {
+  :root {
+    color-scheme: dark;
+
+    --color-bg: #080b10;
+    --color-bg-deep: #05070b;
+    --color-surface: #0e141b;
+    --color-surface-raised: #131c26;
+    --color-surface-soft: #182431;
+    --color-text: #f4f7fb;
+    --color-text-muted: #a7b3c2;
+    --color-text-quiet: #7f8ea0;
+    --color-border: #29384a;
+    --color-border-strong: #52657a;
+    --color-cyan: #5abceb;
+    --color-cyan-strong: #2e9ed5;
+    --color-cyan-soft: rgba(90, 188, 235, 0.14);
+    --color-gold: #c9a86a;
+    --color-gold-soft: rgba(201, 168, 106, 0.14);
+    --color-focus: #7dd3fc;
+    --color-success: #76d4a5;
+    --color-black: #020305;
+
+    --font-sans: "Inter", "Segoe UI", Arial, sans-serif;
+    --font-display: "Playfair Display", Georgia, serif;
+
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: clamp(1.0625rem, 1.5vw, 1.1875rem);
+    --text-xl: clamp(1.25rem, 2vw, 1.5rem);
+    --text-2xl: clamp(1.75rem, 3vw, 2.5rem);
+    --text-3xl: clamp(2.35rem, 5vw, 4.5rem);
+    --text-hero: clamp(3.35rem, 7.2vw, 6.8rem);
+
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+    --space-32: 8rem;
+
+    --container: 77.5rem;
+    --gutter: clamp(1.25rem, 4vw, 3rem);
+    --nav-height: 5rem;
+
+    --border-thin: 1px;
+    --border-medium: 2px;
+    --radius-small: 0.125rem;
+    --shadow-offset: 0.5rem 0.5rem 0 rgba(46, 158, 213, 0.2);
+    --shadow-lift: 0 1.5rem 4rem rgba(0, 0, 0, 0.28);
+
+    --duration-fast: 160ms;
+    --duration-base: 240ms;
+    --duration-slow: 420ms;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+
+    --z-base: 0;
+    --z-raised: 10;
+    --z-nav: 50;
+    --z-overlay: 100;
+  }
+}
