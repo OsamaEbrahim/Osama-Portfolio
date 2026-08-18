@@ -1,0 +1,98 @@
+@layer print {
+  @media print {
+    .project-tabs,
+    .projects__back {
+      display: none !important;
+    }
+
+    .project-card[hidden] {
+      display: grid !important;
+    }
+    :root {
+      color-scheme: light;
+    }
+
+    html,
+    body {
+      background: #ffffff;
+      color: #111318;
+    }
+
+    body {
+      font-size: 10pt;
+    }
+
+    .site-header,
+    .skip-link,
+    .ambient-canvas,
+    .hero__actions,
+    .contact__actions,
+    .copy-status {
+      display: none !important;
+    }
+
+    .section {
+      padding-block: 1.2rem;
+      border-color: #cbd1d8;
+      break-inside: avoid;
+    }
+
+    .hero {
+      min-height: auto;
+      padding-block: 1.5rem;
+    }
+
+    .hero__grid {
+      grid-template-columns: 2fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .hero__title,
+    .section__title,
+    h2,
+    h3,
+    strong {
+      color: #111318;
+    }
+
+    .hero__role,
+    .hero__summary,
+    .section__intro,
+    .timeline__description,
+    .impact-card__description,
+    .project-card__description,
+    .site-footer__note,
+    p,
+    li {
+      color: #39424e;
+    }
+
+    .hero__portrait-wrap {
+      max-width: 12rem;
+    }
+
+    .hero__portrait-frame,
+    .timeline__content,
+    .impact-card,
+    .project-card,
+    .expertise-card,
+    .credential-card,
+    .recognition-card,
+    .foundation-card,
+    .contact__panel {
+      border-color: #9aa5b1;
+      background: #ffffff;
+      box-shadow: none;
+    }
+
+    .impact-card,
+    .project-card,
+    .credential-card {
+      min-height: auto;
+    }
+
+    a[href]::after {
+      content: none;
+    }
+  }
+}

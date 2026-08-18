@@ -1,0 +1,204 @@
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    margin: 0;
+    padding: 0;
+    scroll-padding-top: calc(var(--nav-height) + var(--space-4));
+    scrollbar-gutter: stable;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  ul,
+  ol,
+  dl,
+  dd,
+  figure,
+  blockquote {
+    margin: 0;
+  }
+
+  ul,
+  ol {
+    padding: 0;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  img,
+  picture {
+    display: block;
+    max-width: 100%;
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+}
+
+@layer base {
+  html {
+    background: var(--color-bg);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    position: relative;
+    isolation: isolate;
+    min-width: 20rem;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    background: var(--color-bg-deep);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    font-weight: 400;
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body::before,
+  body::after {
+    position: fixed;
+    z-index: -1;
+    pointer-events: none;
+    content: "";
+  }
+
+  body::before {
+    inset: 0;
+    background:
+      radial-gradient(
+        46rem 34rem at 12% 88%,
+        rgba(103, 72, 146, 0.13),
+        transparent 66%
+      ),
+      linear-gradient(145deg, #05070c 0%, #07111b 48%, #0c0912 100%);
+  }
+
+  body::after {
+    inset-block-start: -9rem;
+    inset-inline-start: 50%;
+    width: min(82rem, 118vw);
+    height: 24rem;
+    border-radius: 50%;
+    background: linear-gradient(
+      100deg,
+      transparent 4%,
+      rgba(90, 188, 235, 0.18) 34%,
+      rgba(104, 83, 170, 0.16) 61%,
+      rgba(201, 168, 106, 0.08) 78%,
+      transparent 96%
+    );
+    filter: blur(72px);
+    opacity: 0.48;
+    transform: translate3d(-50%, 0, 0) rotate(-8deg);
+  }
+
+  .ambient-canvas {
+    display: block;
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    contain: strict;
+    opacity: 0.88;
+    pointer-events: none;
+  }
+
+  ::selection {
+    background: var(--color-cyan);
+    color: var(--color-bg-deep);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 4px;
+  }
+
+  a {
+    color: inherit;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.2em;
+  }
+
+  button,
+  a {
+    touch-action: manipulation;
+  }
+
+  button {
+    border: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--color-text);
+    font-weight: 650;
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+
+  p {
+    max-width: 72ch;
+  }
+
+  strong {
+    color: var(--color-text);
+    font-weight: 650;
+  }
+
+  .skip-link {
+    position: fixed;
+    inset-block-start: var(--space-4);
+    inset-inline-start: var(--space-4);
+    z-index: calc(var(--z-overlay) + 1);
+    padding: var(--space-3) var(--space-4);
+    transform: translateY(-180%);
+    border: var(--border-medium) solid var(--color-focus);
+    background: var(--color-bg-deep);
+    color: var(--color-text);
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform var(--duration-fast) var(--ease-out);
+  }
+
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+
+  .visually-hidden,
+  .copy-source {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .no-scroll,
+  .nav-open {
+    overflow: hidden;
+  }
+}
