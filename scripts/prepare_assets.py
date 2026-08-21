@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 
+import argparse
 from io import BytesIO
 from pathlib import Path
+from shutil import copyfile
 from urllib.request import Request, urlopen
 
 from PIL import Image, ImageOps
@@ -30,6 +32,38 @@ PROJECT_IMAGES = (
 
 SIZES = ((640, 360), (1200, 675))
 
+BRAND_ASSETS = (
+    (
+        "microsoft-certified-associate-badge.svg",
+        "https://learn.microsoft.com/en-us/media/learn/certification/badges/"
+        "microsoft-certified-associate-badge.svg",
+    ),
+    (
+        "aws-certified-ai-practitioner-badge.png",
+        "https://images.credly.com/images/4d4693bb-530e-4bca-9327-de07f3aa2348/image.png",
+    ),
+    (
+        "pmp-badge.png",
+        "https://images.credly.com/images/731e7ef4-9b0c-4d7b-ab65-23cc699c0aa3/blob",
+    ),
+)
+
+ORGANIZATION_ASSETS = (
+    (
+        "bahrain-public-prosecution.svg",
+        "https://cdn.prod.website-files.com/63a327f073bbfd0ed01684d8/"
+        "63a327f073bbfd0a02168b45_Public%20Prosecution.svg",
+    ),
+    (
+        "danat.png",
+        "https://www.danat.bh/wp-content/uploads/2017/06/"
+        "web-1-1-e1594724600197.png",
+    ),
+    (
+        "bahrain-airport-services.png",
+        "https://bas.com.bh/wp-content/uploads/2024/11/BAS-logo.png",
+    ),
+)
 
 def download(url: str) -> bytes:
     request = Request(
@@ -76,7 +110,62 @@ def prepare_university_logo() -> None:
     logo.save(BRANDS_DIR / "university-of-bahrain.png", "PNG", optimize=True)
 
 
+def prepare_brand_assets() -> None:
+    """Download official certification badges without altering them."""
+    BRANDS_DIR.mkdir(parents=True, exist_ok=True)
+
+    for filename, url in BRAND_ASSETS:
+        (BRANDS_DIR / filename).write_bytes(download(url))
+
+
+def prepare_organization_assets() -> None:
+    """Download organization marks without recoloring or reshaping them."""
+    BRANDS_DIR.mkdir(parents=True, exist_ok=True)
+
+    for filename, url in ORGANIZATION_ASSETS:
+        (BRANDS_DIR / filename).write_bytes(download(url))
+
+
+def import_award_logo(source: Path) -> None:
+    """Copy the user-supplied award logo byte-for-byte into the site assets."""
+    if not source.is_file():
+        raise FileNotFoundError(f"Award logo not found: {source}")
+
+    BRANDS_DIR.mkdir(parents=True, exist_ok=True)
+    copyfile(source, BRANDS_DIR / "bahrain-egovernment-excellence-award.png")
+
+
 def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--award-logo",
+        type=Path,
+        help="Copy a supplied PNG award logo into the portfolio assets.",
+    )
+    parser.add_argument(
+        "--award-logo-only",
+        action="store_true",
+        help="Import only the supplied award logo without downloading other assets.",
+    )
+    parser.add_argument(
+        "--organization-assets-only",
+        action="store_true",
+        help="Download only the organization marks used on the experience page.",
+    )
+    args = parser.parse_args()
+
+    if args.award_logo_only:
+        if args.award_logo is None:
+            parser.error("--award-logo-only requires --award-logo")
+        import_award_logo(args.award_logo)
+        print("Imported supplied eGovernment Excellence Award logo")
+        return
+
+    if args.organization_assets_only:
+        prepare_organization_assets()
+        print("Prepared organization marks")
+        return
+
     PROJECTS_DIR.mkdir(parents=True, exist_ok=True)
     BRANDS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -86,6 +175,14 @@ def main() -> None:
 
     prepare_university_logo()
     print("Prepared University of Bahrain logo")
+    prepare_brand_assets()
+    print("Prepared certification artwork")
+    prepare_organization_assets()
+    print("Prepared organization marks")
+
+    if args.award_logo is not None:
+        import_award_logo(args.award_logo)
+        print("Imported supplied eGovernment Excellence Award logo")
 
 
 if __name__ == "__main__":

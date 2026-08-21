@@ -9,6 +9,20 @@
 
   const compactViewport = window.matchMedia('(max-width: 48rem)');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const ambientTriggers = Array.from(document.querySelectorAll('[data-ambient-trigger]'));
+  let backdropPulseTimer = 0;
+
+  const pulseBackdrop = () => {
+    document.body.classList.remove('ambient-logo-pulse');
+    window.clearTimeout(backdropPulseTimer);
+    void document.body.offsetWidth;
+    document.body.classList.add('ambient-logo-pulse');
+    backdropPulseTimer = window.setTimeout(() => {
+      document.body.classList.remove('ambient-logo-pulse');
+    }, 460);
+  };
+
+  ambientTriggers.forEach((trigger) => trigger.addEventListener('click', pulseBackdrop));
 
   if (compactViewport.matches || reducedMotion.matches) {
     canvas.hidden = true;
@@ -926,6 +940,32 @@
     requestRender();
   };
 
+  const handleAmbientTrigger = (event) => {
+    if (event.detail !== 0) {
+      return;
+    }
+
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const x = bounds.left + bounds.width / 2;
+    const y = bounds.top + bounds.height / 2;
+    const now = window.performance.now();
+    const origin = nearestNode(x, y);
+
+    if (origin.id < 0) {
+      return;
+    }
+
+    state.pointer.x = x;
+    state.pointer.y = y;
+    state.pointer.targetX = x;
+    state.pointer.targetY = y;
+    state.pointer.activeNode = origin.id;
+    state.lastPointerInput = now;
+    state.pointerEnergy = 1;
+    createActivationWave(origin.id, now);
+    requestRender();
+  };
+
   const handleScroll = () => {
     const currentScrollY = window.scrollY || 0;
     const delta = currentScrollY - state.lastScrollY;
@@ -953,6 +993,7 @@
     window.addEventListener('pointercancel', handlePointerCancel, { passive: true });
     document.addEventListener('mouseleave', handlePointerLeave);
     window.addEventListener('scroll', handleScroll, { passive: true });
+    ambientTriggers.forEach((trigger) => trigger.addEventListener('click', handleAmbientTrigger));
   };
 
   const disableInteractions = () => {
@@ -967,6 +1008,7 @@
     window.removeEventListener('pointercancel', handlePointerCancel);
     document.removeEventListener('mouseleave', handlePointerLeave);
     window.removeEventListener('scroll', handleScroll);
+    ambientTriggers.forEach((trigger) => trigger.removeEventListener('click', handleAmbientTrigger));
     state.tapCandidate = null;
   };
 

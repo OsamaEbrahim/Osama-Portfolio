@@ -18,6 +18,22 @@
     return;
   }
 
+  cards.forEach((card) => {
+    const detailLink = card.querySelector('.project-card__detail-link');
+
+    card.addEventListener('click', (event) => {
+      if (
+        !detailLink ||
+        event.defaultPrevented ||
+        event.target.closest('a, button, details, summary')
+      ) {
+        return;
+      }
+
+      window.location.assign(detailLink.href);
+    });
+  });
+
   const selectCategory = (tab, { moveFocus = false } = {}) => {
     const category = tab.dataset.projectCategory;
     const label = tab.querySelector('span')?.textContent.trim() || tab.textContent.trim();

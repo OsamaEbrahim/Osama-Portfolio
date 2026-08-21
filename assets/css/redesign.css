@@ -161,6 +161,13 @@
     object-fit: contain;
   }
 
+  .proof-mark--award img {
+    width: 4.75rem;
+    height: 2.75rem;
+    padding: 0.2rem;
+    background: #ffffff;
+  }
+
   .proof-mark strong,
   .proof-mark small {
     display: block;
@@ -512,6 +519,7 @@
 
   .project-card {
     grid-template-rows: auto 1fr;
+    cursor: pointer;
   }
 
   .project-card__body {
@@ -561,6 +569,23 @@
     min-height: 3rem;
   }
 
+  .project-card__detail-link {
+    display: inline-flex;
+    min-height: 2.75rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    margin-top: var(--space-3);
+    color: var(--color-focus);
+    font-size: var(--text-sm);
+    font-weight: 750;
+    text-decoration: none;
+  }
+
+  .project-card__detail-link:hover {
+    color: var(--color-text);
+  }
+
   .projects__back {
     margin-top: var(--space-8);
   }
@@ -592,6 +617,30 @@
 
   .experience-row__period span::before {
     content: "— ";
+  }
+
+  .experience-row__identity {
+    display: grid;
+    grid-template-columns: 4rem minmax(0, 1fr);
+    gap: var(--space-4);
+    align-content: start;
+    align-items: start;
+  }
+
+  .experience-row__logo {
+    display: grid;
+    width: 4rem;
+    height: 4rem;
+    place-items: center;
+    padding: 0.45rem;
+    border: var(--border-thin) solid rgba(244, 247, 251, 0.16);
+    background: #ffffff;
+  }
+
+  .experience-row__logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 
   .experience-row__identity h3 {
@@ -665,6 +714,25 @@
     border-inline: var(--border-thin) solid var(--color-border);
     border-block-end: var(--border-thin) solid var(--color-border);
     background: rgba(14, 20, 27, 0.9);
+  }
+
+  .credential-compact__badge {
+    display: grid;
+    min-height: 8.5rem;
+    place-items: center;
+    padding: var(--space-3);
+    border-bottom: var(--border-thin) solid var(--color-border);
+    background: rgba(8, 11, 16, 0.42);
+  }
+
+  .credential-compact__badge img {
+    width: 7.25rem;
+    height: 7.25rem;
+    object-fit: contain;
+  }
+
+  .credential-compact__identity {
+    min-height: 7.5rem;
   }
 
   .issuer-mark {
@@ -747,6 +815,30 @@
   .recognition-row__heading h3 {
     margin-top: var(--space-2);
     font-size: var(--text-xl);
+  }
+
+  .recognition-row__logo {
+    width: min(100%, 19rem);
+    height: auto;
+    padding: var(--space-3);
+    background: #ffffff;
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  .awards-section .recognition-row {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .awards-section .recognition-row__heading h3 {
+    margin-top: var(--space-5);
+  }
+
+  .page-experience .section__header--compact,
+  .page-credentials .section__header--compact {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .recognition-row article {
@@ -1032,6 +1124,15 @@
       margin-inline-end: var(--space-2);
     }
 
+    .experience-row__identity {
+      grid-template-columns: 3.5rem minmax(0, 1fr);
+    }
+
+    .experience-row__logo {
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+
     .capability-grid {
       grid-template-columns: 1fr;
     }
@@ -1088,6 +1189,15 @@
     .proof-mark img {
       width: 2.25rem;
       height: 2.25rem;
+    }
+
+    .proof-mark--award img {
+      width: 4.5rem;
+      height: 2.25rem;
+    }
+
+    .credential-compact__identity {
+      min-height: 0;
     }
 
     .outcome-card {

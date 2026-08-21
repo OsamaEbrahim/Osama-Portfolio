@@ -9,7 +9,14 @@ from urllib.parse import unquote, urlsplit
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = ("index.html", "projects.html", "experience.html")
+PAGES = (
+    "index.html",
+    "projects.html",
+    "project.html",
+    "experience.html",
+    "credentials.html",
+    "contact.html",
+)
 
 
 class PageParser(HTMLParser):
@@ -26,10 +33,28 @@ class PageParser(HTMLParser):
         self.project_groups: list[str] = []
         self.project_tabs: list[str] = []
         self.concept_labels = 0
+        self.project_detail_links = 0
         self.h1_count = 0
+        self.inline_scripts = 0
+        self.inline_style_blocks = 0
+        self.inline_style_attributes = 0
+        self.inline_event_handlers = 0
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         values = dict(attrs)
+
+        if tag == "script" and not values.get("src"):
+            self.inline_scripts += 1
+
+        if tag == "style":
+            self.inline_style_blocks += 1
+
+        if "style" in values:
+            self.inline_style_attributes += 1
+
+        self.inline_event_handlers += sum(
+            1 for attribute, _ in attrs if attribute.lower().startswith("on")
+        )
 
         if element_id := values.get("id"):
             self.ids.append(element_id)
@@ -71,6 +96,9 @@ class PageParser(HTMLParser):
         if "concept-label" in values.get("class", "").split():
             self.concept_labels += 1
 
+        if "project-card__detail-link" in values.get("class", "").split():
+            self.project_detail_links += 1
+
 
 def parse_page(path: Path) -> PageParser:
     parser = PageParser()
@@ -111,6 +139,15 @@ def main() -> None:
                 f"{parser.titles}, {parser.descriptions}, {parser.canonicals}"
             )
 
+        inline_assets = {
+            "inline scripts": parser.inline_scripts,
+            "style blocks": parser.inline_style_blocks,
+            "style attributes": parser.inline_style_attributes,
+            "inline event handlers": parser.inline_event_handlers,
+        }
+        if found_inline := [label for label, count in inline_assets.items() if count]:
+            errors.append(f"{name}: inline assets are not allowed: {', '.join(found_inline)}")
+
         required_og = {"og:title", "og:description", "og:url"}
         if missing_og := required_og - parser.og_fields:
             errors.append(f"{name}: missing social metadata: {', '.join(sorted(missing_og))}")
@@ -145,11 +182,29 @@ def main() -> None:
         errors.append(f"projects.html: expected three cards per category, found {dict(group_counts)}")
     if project_parser.concept_labels != 12:
         errors.append(f"projects.html: expected 12 concept labels, found {project_parser.concept_labels}")
+    if project_parser.project_detail_links != 12:
+        errors.append(
+            f"projects.html: expected 12 project detail links, found {project_parser.project_detail_links}"
+        )
+
+    forbidden_remarks = (
+        "Three representative projects spanning AI, 3D review, and mobile digital forensics.",
+        "Each role combines technical work with the operating discipline needed to move initiatives forward.",
+        "Focused groups make the technical and delivery range easier to scan.",
+    )
+    for name in PAGES:
+        source = (ROOT / name).read_text(encoding="utf-8")
+        for remark in forbidden_remarks:
+            if remark in source:
+                errors.append(f"{name}: contains removed section remark: {remark}")
 
     if errors:
         raise SystemExit("Site validation failed:\n- " + "\n- ".join(errors))
 
-    print("Validated 3 pages: metadata, headings, anchors, assets, images, and project categories are consistent.")
+    print(
+        f"Validated {len(PAGES)} pages: metadata, headings, anchors, assets, images, "
+        "and project categories are consistent."
+    )
 
 
 if __name__ == "__main__":
