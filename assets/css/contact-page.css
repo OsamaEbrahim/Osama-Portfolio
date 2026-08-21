@@ -3,6 +3,11 @@
     min-height: calc(100dvh - var(--nav-height));
   }
 
+  .page-contact {
+    --contact-whatsapp: #25d366;
+    --contact-whatsapp-soft: rgba(37, 211, 102, 0.2);
+  }
+
   .contact-page {
     position: relative;
     padding-block: clamp(var(--space-12), 7vw, var(--space-24));
@@ -73,6 +78,33 @@
 
   .direct-contact__email:hover {
     color: var(--color-focus);
+  }
+
+  .direct-contact__channels {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-3) var(--space-5);
+  }
+
+  .direct-contact__whatsapp {
+    display: inline-flex;
+    min-height: 3.25rem;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--color-text);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .direct-contact__whatsapp:hover {
+    color: var(--contact-whatsapp);
+  }
+
+  .direct-contact__whatsapp img,
+  .button--whatsapp img {
+    flex: 0 0 auto;
   }
 
   .direct-contact__actions {
@@ -173,14 +205,27 @@
   }
 
   .contact-form__submit {
-    display: flex;
-    align-items: center;
-    gap: var(--space-5);
+    display: grid;
+    gap: var(--space-3);
     margin-top: var(--space-6);
   }
 
-  .contact-form__submit .button {
-    flex: 0 0 auto;
+  .contact-form__actions {
+    display: flex;
+    gap: var(--space-3);
+  }
+
+  .contact-form__actions .button {
+    flex: 1 1 0;
+  }
+
+  .button--whatsapp {
+    border-color: var(--contact-whatsapp);
+  }
+
+  .button--whatsapp:hover {
+    border-color: var(--contact-whatsapp);
+    box-shadow: 0.45rem 0.45rem 0 var(--contact-whatsapp-soft);
   }
 
   .contact-form__status {
@@ -229,12 +274,13 @@
     }
 
     .direct-contact__actions,
-    .contact-form__submit {
+    .contact-form__actions {
       align-items: stretch;
       flex-direction: column;
     }
 
-    .contact-form__submit .button {
+    .contact-form__actions .button {
+      flex: none;
       width: 100%;
     }
   }

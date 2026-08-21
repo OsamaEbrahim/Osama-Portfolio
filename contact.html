@@ -23,12 +23,12 @@
     <link rel="stylesheet" href="assets/css/sections.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/redesign.css?v=20260821-3">
-    <link rel="stylesheet" href="assets/css/contact-page.css">
+    <link rel="stylesheet" href="assets/css/contact-page.css?v=20260821-2">
     <link rel="stylesheet" href="assets/css/print.css" media="print">
 
     <script src="assets/js/navigation.js" defer></script>
     <script src="assets/js/reveal.js?v=20260821-1" defer data-swup-reload-script></script>
-    <script src="assets/js/contact.js?v=20260821-1" defer data-swup-reload-script></script>
+    <script src="assets/js/contact.js?v=20260821-2" defer data-swup-reload-script></script>
     <script src="assets/js/ambient.js?v=20260821-2" defer></script>
     <script src="https://unpkg.com/swup@4.9.2/dist/Swup.umd.js" integrity="sha384-SQcRQHke9VCdSV4AJCYzTQlV8KJldKo8Zz0jARJaEkCJNSMBzsxEwShjDMvvK+Aq" crossorigin="anonymous" defer data-swup-ignore-script></script>
     <script src="https://unpkg.com/@swup/head-plugin@2.3.1/dist/index.umd.js" integrity="sha384-6Ai7SRlZ50QYQ/dc9y6MRZwhlK74Cwab40Sb63ZxrVuoJL9DG9eNpi70b4zL+qvP" crossorigin="anonymous" defer data-swup-ignore-script></script>
@@ -70,11 +70,17 @@
           <div class="contact-page__intro" data-reveal>
             <p class="section__eyebrow">Contact</p>
             <h1 id="contact-title">Let’s start a useful conversation.</h1>
-            <p class="contact-page__summary">Share a little context about an opportunity, project, or collaboration. The form will prepare a message in your default email app.</p>
+            <p class="contact-page__summary">Share a little context about an opportunity, project, or collaboration. The form can prepare your message in your email app or WhatsApp.</p>
 
             <aside class="direct-contact" aria-labelledby="direct-contact-title">
-              <p class="direct-contact__label" id="direct-contact-title">Prefer to email directly?</p>
-              <a class="direct-contact__email" href="mailto:osama.e96@outlook.com">osama.e96@outlook.com</a>
+              <p class="direct-contact__label" id="direct-contact-title">Prefer to contact me directly?</p>
+              <div class="direct-contact__channels">
+                <a class="direct-contact__email" href="mailto:osama.e96@outlook.com">osama.e96@outlook.com</a>
+                <a class="direct-contact__whatsapp" href="https://wa.me/97333750554" target="_blank" rel="noopener noreferrer" aria-label="Message Osama on WhatsApp at +973 3375 0554">
+                  <img src="assets/icons/whatsapp.svg" width="20" height="20" alt="" aria-hidden="true">
+                  <span>WhatsApp · +973 3375 0554</span>
+                </a>
+              </div>
               <div class="direct-contact__actions">
                 <a class="button button--secondary" href="mailto:osama.e96@outlook.com">Send email</a>
                 <button class="button button--secondary" type="button" data-copy-email data-email="osama.e96@outlook.com" aria-describedby="copy-status"><span data-copy-label>Copy email</span></button>
@@ -91,7 +97,7 @@
               <h2>What would you like to discuss?</h2>
             </div>
 
-            <form class="contact-form" data-contact-form data-recipient="osama.e96@outlook.com" aria-describedby="contact-form-note">
+            <form class="contact-form" data-contact-form data-recipient="osama.e96@outlook.com" data-whatsapp-number="97333750554" aria-describedby="contact-form-note">
               <div class="contact-form__grid">
                 <div class="form-field form-field--full">
                   <label for="contact-subject">Subject <span aria-hidden="true">*</span></label>
@@ -117,7 +123,13 @@
 
               <p class="contact-form__note" id="contact-form-note">Required fields are marked with an asterisk. Nothing is stored on this site.</p>
               <div class="contact-form__submit">
-                <button class="button button--primary" type="submit" data-contact-submit>Prepare email</button>
+                <div class="contact-form__actions">
+                  <button class="button button--primary" type="submit" data-contact-submit>Prepare email</button>
+                  <button class="button button--secondary button--whatsapp" type="button" data-contact-whatsapp>
+                    <img src="assets/icons/whatsapp.svg" width="20" height="20" alt="" aria-hidden="true">
+                    <span data-whatsapp-label>Send via WhatsApp</span>
+                  </button>
+                </div>
                 <p class="contact-form__status" role="status" aria-live="polite" aria-atomic="true" data-contact-status></p>
               </div>
             </form>

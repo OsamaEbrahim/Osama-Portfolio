@@ -115,24 +115,42 @@
   }
 
   const submitButton = form.querySelector('[data-contact-submit]');
+  const whatsappButton = form.querySelector('[data-contact-whatsapp]');
+  const whatsappLabel = whatsappButton?.querySelector('[data-whatsapp-label]');
   const formStatus = form.querySelector('[data-contact-status]');
   const originalSubmitLabel = submitButton ? submitButton.textContent : '';
+  const originalWhatsappLabel = whatsappLabel ? whatsappLabel.textContent : '';
+
+  const validateForm = () => {
+    if (form.checkValidity()) {
+      return true;
+    }
+
+    form.reportValidity();
+    const firstInvalidField = form.querySelector(':invalid');
+    firstInvalidField?.focus();
+    return false;
+  };
+
+  const getMessageDetails = () => {
+    const formData = new FormData(form);
+
+    return {
+      subject: String(formData.get('subject') || '').trim(),
+      contactType: String(formData.get('contactType') || '').trim(),
+      message: String(formData.get('message') || '').trim(),
+    };
+  };
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      const firstInvalidField = form.querySelector(':invalid');
-      firstInvalidField?.focus();
+    if (!validateForm()) {
       return;
     }
 
-    const formData = new FormData(form);
     const recipient = form.dataset.recipient?.trim();
-    const subject = String(formData.get('subject') || '').trim();
-    const contactType = String(formData.get('contactType') || '').trim();
-    const message = String(formData.get('message') || '').trim();
+    const { subject, contactType, message } = getMessageDetails();
 
     if (!recipient) {
       if (formStatus) {
@@ -165,6 +183,50 @@
       if (submitButton) {
         submitButton.disabled = false;
         submitButton.textContent = originalSubmitLabel;
+      }
+    }, 1200);
+  });
+
+  whatsappButton?.addEventListener('click', () => {
+    if (!validateForm()) {
+      return;
+    }
+
+    const whatsappNumber = String(form.dataset.whatsappNumber || '').replace(/\D/g, '');
+    const { subject, contactType, message } = getMessageDetails();
+
+    if (!whatsappNumber) {
+      if (formStatus) {
+        formStatus.textContent = 'The WhatsApp number is unavailable. Please use the direct WhatsApp link.';
+      }
+      return;
+    }
+
+    const whatsappMessage = [
+      'Hello Osama,',
+      '',
+      `Subject: ${subject}`,
+      `Contact type: ${contactType}`,
+      '',
+      message,
+    ].join('\n');
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+    whatsappButton.disabled = true;
+    if (whatsappLabel) {
+      whatsappLabel.textContent = 'Opening WhatsApp…';
+    }
+
+    if (formStatus) {
+      formStatus.textContent = 'WhatsApp should open with your message prepared.';
+    }
+
+    window.location.href = whatsappUrl;
+
+    window.setTimeout(() => {
+      whatsappButton.disabled = false;
+      if (whatsappLabel) {
+        whatsappLabel.textContent = originalWhatsappLabel;
       }
     }, 1200);
   });
