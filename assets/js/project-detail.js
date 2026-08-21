@@ -116,10 +116,14 @@
     visuals,
   });
 
-  elements.previous.href = `project.html?id=${previous.id}`;
-  elements.previous.querySelector('strong').textContent = previous.title;
-  elements.next.href = `project.html?id=${next.id}`;
-  elements.next.querySelector('strong').textContent = next.title;
+  const setPagerLink = (link, targetProject, direction) => {
+    link.href = `project.html?id=${targetProject.id}`;
+    link.querySelector('strong').textContent = targetProject.title;
+    link.setAttribute('aria-label', `${direction} project: ${targetProject.title}`);
+  };
+
+  setPagerLink(elements.previous, previous, 'Previous');
+  setPagerLink(elements.next, next, 'Next');
   root.dataset.projectIndex = project.index;
   root.dataset.projectReady = 'true';
 })();
