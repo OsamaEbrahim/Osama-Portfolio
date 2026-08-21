@@ -39,7 +39,7 @@
     }
 
     container.setAttribute('role', 'group');
-    container.setAttribute('aria-label', 'Project concept visuals');
+    container.setAttribute('aria-label', 'Project visuals');
 
     visualIds.forEach((visualId, index) => {
       const visual = visuals[visualId];
@@ -51,18 +51,15 @@
       const figure = document.createElement('figure');
       const caption = document.createElement('figcaption');
       const number = document.createElement('span');
-      const label = document.createElement('span');
       const text = document.createElement('span');
 
       figure.className = `project-gallery__item${index === 0 ? ' project-gallery__item--primary' : ''}`;
       number.className = 'project-gallery__number';
       number.textContent = String(index + 1).padStart(2, '0');
-      label.className = 'concept-label';
-      label.textContent = 'Concept visual';
       text.className = 'project-gallery__caption';
       text.textContent = visual.caption;
 
-      caption.append(number, label, text);
+      caption.append(number, text);
       figure.append(createPicture(visualId, visual, index), caption);
       container.append(figure);
     });

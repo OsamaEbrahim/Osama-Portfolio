@@ -50,7 +50,6 @@ const createArrowButton = (direction) => {
 const createSlide = (visualId, visual, index, count) => {
   const figure = document.createElement('figure');
   const caption = document.createElement('figcaption');
-  const conceptLabel = document.createElement('span');
   const captionText = document.createElement('span');
 
   figure.className = 'project-carousel__slide';
@@ -59,10 +58,8 @@ const createSlide = (visualId, visual, index, count) => {
   figure.setAttribute('aria-label', `${index + 1} of ${count}`);
   figure.hidden = index !== 0;
 
-  conceptLabel.className = 'concept-label';
-  conceptLabel.textContent = 'Concept visual';
   captionText.textContent = visual.caption;
-  caption.append(conceptLabel, captionText);
+  caption.append(captionText);
   figure.append(createPicture(visualId, visual, index === 0), caption);
   return figure;
 };
@@ -94,7 +91,7 @@ export const createProjectCarousel = ({
 
   container.setAttribute('role', 'region');
   container.setAttribute('aria-roledescription', 'carousel');
-  container.setAttribute('aria-label', 'Project concept visuals');
+  container.setAttribute('aria-label', 'Project visuals');
   track.className = 'project-carousel__track';
   controls.className = 'project-carousel__controls';
   status.className = 'project-carousel__status';

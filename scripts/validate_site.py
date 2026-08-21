@@ -180,8 +180,10 @@ def main() -> None:
         errors.append("projects.html: category tabs must contain the four named categories and no All tab")
     if group_counts != Counter({category: 3 for category in expected_categories}):
         errors.append(f"projects.html: expected three cards per category, found {dict(group_counts)}")
-    if project_parser.concept_labels != 12:
-        errors.append(f"projects.html: expected 12 concept labels, found {project_parser.concept_labels}")
+    if project_parser.concept_labels:
+        errors.append(
+            f"projects.html: expected no concept labels, found {project_parser.concept_labels}"
+        )
     if project_parser.project_detail_links != 12:
         errors.append(
             f"projects.html: expected 12 project detail links, found {project_parser.project_detail_links}"

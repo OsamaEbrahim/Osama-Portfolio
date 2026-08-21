@@ -199,7 +199,7 @@
     inset-inline: 0;
     inset-block-end: 0;
     display: grid;
-    grid-template-columns: auto auto minmax(0, 1fr);
+    grid-template-columns: auto minmax(0, 1fr);
     align-items: center;
     gap: var(--space-3);
     padding: var(--space-3) var(--space-4);
@@ -213,11 +213,6 @@
     font-variant-numeric: tabular-nums;
     font-weight: 800;
     letter-spacing: 0.1em;
-  }
-
-  .project-gallery__item .concept-label {
-    position: static;
-    white-space: nowrap;
   }
 
   .project-gallery__caption {
