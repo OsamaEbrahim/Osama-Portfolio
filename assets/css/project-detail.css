@@ -236,6 +236,10 @@
     grid-template-columns: 1fr;
   }
 
+  .project-detail__section-heading--solo {
+    grid-template-columns: 1fr;
+  }
+
   .project-brief__grid {
     display: grid;
     grid-template-columns: minmax(0, 1.18fr) minmax(20rem, 0.82fr);
