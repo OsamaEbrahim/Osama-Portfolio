@@ -26,8 +26,15 @@
     <link rel="stylesheet" href="assets/css/print.css" media="print">
 
     <script src="assets/js/navigation.js" defer></script>
-    <script src="assets/js/reveal.js?v=20260821-1" defer></script>
+    <script src="assets/js/reveal.js?v=20260821-1" defer data-swup-reload-script></script>
     <script src="assets/js/ambient.js?v=20260821-2" defer></script>
+    <script src="https://unpkg.com/swup@4.9.2/dist/Swup.umd.js" integrity="sha384-SQcRQHke9VCdSV4AJCYzTQlV8KJldKo8Zz0jARJaEkCJNSMBzsxEwShjDMvvK+Aq" crossorigin="anonymous" defer data-swup-ignore-script></script>
+    <script src="https://unpkg.com/@swup/head-plugin@2.3.1/dist/index.umd.js" integrity="sha384-6Ai7SRlZ50QYQ/dc9y6MRZwhlK74Cwab40Sb63ZxrVuoJL9DG9eNpi70b4zL+qvP" crossorigin="anonymous" defer data-swup-ignore-script></script>
+    <script src="https://unpkg.com/@swup/body-class-plugin@3.3.0/dist/index.umd.js" integrity="sha384-ssrX9ZLm5KIueldUSXjDblDcbzAfNLWdAYrRx8W5/gUovvMdPP1Wjh9TIM+S+3Pk" crossorigin="anonymous" defer data-swup-ignore-script></script>
+    <script src="https://unpkg.com/@swup/scripts-plugin@2.1.0/dist/index.umd.js" integrity="sha384-0OOd/P3xw2RWbA6Dv7vjhsqkMf5b+ak1ekw6K+JNstuXFnzUio9JORhTVZD+xcWH" crossorigin="anonymous" defer data-swup-ignore-script></script>
+    <script src="https://unpkg.com/@swup/fade-theme@2.0.2/dist/index.umd.js" integrity="sha384-05qITXzv3s5tGrAPD/bltmjmQkxMo6zMBxU124nKSPqjow1gBfBVANPa+Jq6jz/s" crossorigin="anonymous" defer data-swup-ignore-script></script>
+    <script src="https://unpkg.com/@swup/a11y-plugin@5.2.1/dist/index.umd.js" integrity="sha384-/ehE7pXGqdMd2qf4r2PG99PhEeqcRV1Javfrsxby1H5QH5UdTj2KJ6+28CjEsMEB" crossorigin="anonymous" defer data-swup-ignore-script></script>
+    <script src="assets/js/page-transitions.js?v=20260821-1" defer data-swup-ignore-script></script>
   </head>
   <body class="site-body page-home">
     <canvas class="ambient-canvas" aria-hidden="true" data-ambient-canvas></canvas>
@@ -202,7 +209,7 @@
 
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer" id="site-footer">
       <div class="site-footer__inner container">
         <p class="site-footer__note"><span class="visually-hidden">Copyright</span><span aria-hidden="true">©</span> 2026 Osama Ebrahim Hasan</p>
         <nav class="footer-nav" aria-label="Footer navigation">
