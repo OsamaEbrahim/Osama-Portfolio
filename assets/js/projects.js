@@ -81,6 +81,27 @@
     });
   });
 
-  const initialTab = tabs.find((tab) => tab.getAttribute('aria-selected') === 'true') || tabs[0];
+  let hashTarget = null;
+
+  if (window.location.hash) {
+    try {
+      hashTarget = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+    } catch {
+      hashTarget = null;
+    }
+  }
+  const linkedCard = hashTarget?.matches('[data-project-group]') ? hashTarget : null;
+  const linkedTab = linkedCard
+    ? tabs.find((tab) => tab.dataset.projectCategory === linkedCard.dataset.projectGroup)
+    : null;
+  const initialTab =
+    linkedTab || tabs.find((tab) => tab.getAttribute('aria-selected') === 'true') || tabs[0];
+
   selectCategory(initialTab);
+
+  if (linkedCard) {
+    window.requestAnimationFrame(() => {
+      linkedCard.scrollIntoView({ block: 'start' });
+    });
+  }
 })();

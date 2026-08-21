@@ -7,6 +7,14 @@
     return;
   }
 
+  const compactViewport = window.matchMedia('(max-width: 48rem)');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  if (compactViewport.matches || reducedMotion.matches) {
+    canvas.hidden = true;
+    return;
+  }
+
   const context = canvas.getContext('2d', {
     alpha: true,
     desynchronized: true,
@@ -17,7 +25,6 @@
   }
 
   const finePointer = window.matchMedia('(pointer: fine)');
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const rootStyles = window.getComputedStyle(document.documentElement);
   const maximumCanvasPixels = 6500000;
   const routeGrid = 8;

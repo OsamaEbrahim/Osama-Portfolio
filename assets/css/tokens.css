@@ -1,4 +1,4 @@
-@layer tokens, reset, base, layout, components, sections, responsive, print;
+@layer tokens, reset, base, layout, components, sections, responsive, redesign, print;
 
 @font-face {
   font-family: "Inter";
@@ -77,7 +77,7 @@
 
     --duration-fast: 160ms;
     --duration-base: 240ms;
-    --duration-slow: 420ms;
+    --duration-slow: 250ms;
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
     --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
 
