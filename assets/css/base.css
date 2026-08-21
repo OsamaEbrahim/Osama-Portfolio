@@ -110,6 +110,27 @@
     transform: translate3d(-50%, 0, 0) rotate(-8deg);
   }
 
+  body.ambient-logo-pulse::after {
+    animation: ambient-logo-pulse 420ms var(--ease-out);
+  }
+
+  @keyframes ambient-logo-pulse {
+    0% {
+      opacity: 0.48;
+      transform: translate3d(-50%, 0, 0) rotate(-8deg) scale(1);
+    }
+
+    48% {
+      opacity: 0.82;
+      transform: translate3d(-50%, 1rem, 0) rotate(-5deg) scale(1.06);
+    }
+
+    100% {
+      opacity: 0.48;
+      transform: translate3d(-50%, 0, 0) rotate(-8deg) scale(1);
+    }
+  }
+
   .ambient-canvas {
     display: block;
     position: fixed;

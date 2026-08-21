@@ -8,6 +8,7 @@
   }
 
   const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const compactViewport = window.matchMedia('(max-width: 48rem)');
   let observer = null;
 
   const reveal = (item) => {
@@ -28,7 +29,7 @@
     items.forEach(reveal);
   };
 
-  if (motionPreference.matches || !('IntersectionObserver' in window)) {
+  if (motionPreference.matches || compactViewport.matches || !('IntersectionObserver' in window)) {
     revealAll();
     return;
   }

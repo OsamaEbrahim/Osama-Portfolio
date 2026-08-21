@@ -3,37 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="The portfolio of Osama Ebrahim Hasan, a Senior ICT Specialist working across digital transformation, AI, enterprise systems, automation, and digital forensics.">
+    <meta name="description" content="Osama Ebrahim Hasan is a Senior ICT Specialist working across digital transformation, AI, enterprise systems, automation, and digital forensics.">
     <meta name="theme-color" content="#080b10">
     <meta name="color-scheme" content="dark">
     <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://osamaebrahim.github.io/Osama-Portfolio/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Osama Ebrahim Hasan | Senior ICT Specialist">
+    <meta property="og:description" content="Technology strategy, engineering, AI, digital forensics, and governed delivery.">
+    <meta property="og:url" content="https://osamaebrahim.github.io/Osama-Portfolio/">
+    <meta property="og:image" content="https://osamaebrahim.github.io/Osama-Portfolio/assets/images/osama-portrait.jpg">
     <title>Osama Ebrahim Hasan | Senior ICT Specialist</title>
 
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="assets/css/tokens.css">
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/layout.css">
     <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/sections.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/redesign.css">
     <link rel="stylesheet" href="assets/css/print.css" media="print">
 
     <script src="assets/js/navigation.js" defer></script>
-    <script src="assets/js/scrollspy.js" defer></script>
-    <script src="assets/js/projects.js?v=20260818-3" defer></script>
-    <script src="assets/js/reveal.js" defer></script>
-    <script src="assets/js/contact.js" defer></script>
-    <script src="assets/js/ambient.js" defer></script>
+    <script src="assets/js/reveal.js?v=20260821-1" defer></script>
+    <script src="assets/js/ambient.js?v=20260821-2" defer></script>
   </head>
-  <body class="site-body">
+  <body class="site-body page-home">
     <canvas class="ambient-canvas" aria-hidden="true" data-ambient-canvas></canvas>
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header class="site-header" data-site-header>
       <div class="site-header__inner container">
-        <a class="site-brand" href="#profile" aria-label="Osama Ebrahim Hasan, back to profile">
+        <button class="site-brand" type="button" aria-label="Activate the interactive background" data-ambient-trigger>
           <span class="site-brand__mark" aria-hidden="true">OEH</span>
           <span class="site-brand__name">Osama Ebrahim Hasan</span>
-        </a>
+        </button>
 
         <button class="nav-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation" data-nav-toggle>
           <span class="nav-toggle__line" aria-hidden="true"></span>
@@ -41,563 +46,172 @@
 
         <nav class="site-nav" id="primary-navigation" aria-label="Primary navigation">
           <ul class="site-nav__list">
-            <li><a class="site-nav__link" href="#profile" aria-current="page">Profile</a></li>
-            <li><a class="site-nav__link" href="#experience">Experience</a></li>
-            <li><a class="site-nav__link" href="#impact">Impact</a></li>
-            <li><a class="site-nav__link" href="#projects">Projects</a></li>
-            <li><a class="site-nav__link" href="#expertise">Expertise</a></li>
-            <li><a class="site-nav__link" href="#credentials">Credentials</a></li>
-            <li><a class="site-nav__link" href="#contact">Contact</a></li>
+            <li><a class="site-nav__link" href="index.html" aria-current="page">Home</a></li>
+            <li><a class="site-nav__link" href="projects.html#projects">Projects</a></li>
+            <li><a class="site-nav__link" href="experience.html">Experience</a></li>
+            <li><a class="site-nav__link" href="credentials.html">Credentials</a></li>
+            <li><a class="site-nav__link" href="contact.html">Contact</a></li>
+            <li><a class="site-nav__link site-nav__link--resume" href="assets/documents/osama-ebrahim-hasan-resume.pdf" download>Résumé</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
     <main id="main-content" tabindex="-1">
-      <section class="section hero" id="profile" aria-labelledby="profile-title" data-section>
-        <div class="container">
-          <div class="hero__grid">
-            <div class="hero__content" data-reveal>
-              <p class="hero__eyebrow">Senior ICT Specialist <span aria-hidden="true">/</span> Manama, Bahrain</p>
-              <h1 class="hero__title" id="profile-title">Osama Ebrahim Hasan</h1>
-              <p class="hero__role">Transforming complex technology into governed, practical outcomes.</p>
-              <p class="hero__summary">
-                Senior ICT Specialist with over five years of experience across digital transformation, enterprise systems, AI, automation, and digital forensics. I connect hands-on engineering with project governance, stakeholder coordination, and delivery leadership.
-              </p>
-              <div class="hero__actions">
-                <a class="button button--primary" href="assets/documents/osama-ebrahim-hasan-resume.pdf" download>Download résumé</a>
-                <a class="button button--secondary" href="#contact">Contact me</a>
-              </div>
+      <section class="section hero" id="profile" aria-labelledby="profile-title">
+        <div class="container hero__grid">
+          <div class="hero__content" data-reveal>
+            <p class="hero__eyebrow">Osama Ebrahim Hasan <span aria-hidden="true">/</span> Senior ICT Specialist</p>
+            <h1 class="hero__title" id="profile-title">Turning complex technology into practical, governed systems.</h1>
+            <p class="hero__summary">I work across digital transformation, enterprise software, applied AI, automation, and digital forensics. My focus is connecting hands-on engineering with clear governance and dependable delivery.</p>
+            <div class="hero__actions">
+              <a class="button button--primary" href="assets/documents/osama-ebrahim-hasan-resume.pdf" download>Download résumé</a>
+              <a class="button button--secondary" href="contact.html#contact">Let’s connect</a>
+              <a class="text-link hero__work-link" href="projects.html#projects">View selected work <span aria-hidden="true">→</span></a>
             </div>
-
-            <figure class="hero__portrait-wrap" data-reveal>
-              <div class="hero__portrait-frame">
-                <picture>
-                  <source srcset="assets/images/osama-portrait-800.avif 800w" sizes="(max-width: 36rem) calc(100vw - 2.25rem), (max-width: 48rem) 20rem, (max-width: 64rem) 34vw, 25rem" type="image/avif">
-                  <source srcset="assets/images/osama-portrait-800.webp 800w" sizes="(max-width: 36rem) calc(100vw - 2.25rem), (max-width: 48rem) 20rem, (max-width: 64rem) 34vw, 25rem" type="image/webp">
-                  <img class="hero__portrait" src="assets/images/osama-portrait.jpg" width="1086" height="1448" sizes="(max-width: 36rem) calc(100vw - 2.25rem), (max-width: 48rem) 20rem, (max-width: 64rem) 34vw, 25rem" alt="Formal portrait of Osama Ebrahim Hasan" decoding="async" fetchpriority="high">
-                </picture>
-              </div>
-              <figcaption class="hero__portrait-caption">
-                <span>Based in Manama, Bahrain</span>
-                <span>Digital transformation <span aria-hidden="true">·</span> AI <span aria-hidden="true">·</span> Governance</span>
-              </figcaption>
-            </figure>
           </div>
 
+          <figure class="hero__portrait-wrap" data-reveal>
+            <div class="hero__portrait-frame">
+              <picture>
+                <source srcset="assets/images/osama-portrait-800.avif 800w" sizes="(max-width: 48rem) 15rem, 20rem" type="image/avif">
+                <source srcset="assets/images/osama-portrait-800.webp 800w" sizes="(max-width: 48rem) 15rem, 20rem" type="image/webp">
+                <img class="hero__portrait" src="assets/images/osama-portrait.jpg" width="1086" height="1448" sizes="(max-width: 48rem) 15rem, 20rem" alt="Formal portrait of Osama Ebrahim Hasan" decoding="async" fetchpriority="high">
+              </picture>
+            </div>
+            <figcaption class="hero__portrait-caption">
+              <span>Manama, Bahrain</span>
+              <span>Strategy <span aria-hidden="true">·</span> Engineering <span aria-hidden="true">·</span> Delivery</span>
+            </figcaption>
+          </figure>
         </div>
       </section>
 
-      <section class="section experience" id="experience" aria-labelledby="experience-title" data-section>
+      <section class="proof-strip" aria-labelledby="proof-title" data-reveal>
         <div class="container">
-          <header class="section__header" data-reveal>
-            <p class="section__eyebrow">01 <span aria-hidden="true">/</span> Experience</p>
-            <h2 class="section__title" id="experience-title">Engineering depth, delivery discipline.</h2>
-            <p class="section__intro">A career spanning public-sector transformation, digital forensics, enterprise applications, and operational technology delivery.</p>
+          <h2 class="visually-hidden" id="proof-title">Professional credentials and recognition</h2>
+          <ul class="proof-strip__list">
+            <li class="proof-mark"><img src="assets/images/brands/microsoft-certified-associate-badge.svg" width="300" height="300" alt=""><span><strong>Microsoft</strong><small>Azure AI Engineer</small></span></li>
+            <li class="proof-mark"><img src="assets/images/brands/aws-certified-ai-practitioner-badge.png" width="600" height="600" alt=""><span><strong>AWS Certified</strong><small>AI Practitioner</small></span></li>
+            <li class="proof-mark"><img src="assets/images/brands/pmp-badge.png" width="1700" height="1700" alt=""><span><strong>PMP<sup>®</sup></strong><small>Project management</small></span></li>
+            <li class="proof-mark proof-mark--university"><img src="assets/images/brands/university-of-bahrain.png" width="390" height="458" alt=""><span><strong>University of Bahrain</strong><small>B.Sc. Computer Science</small></span></li>
+            <li class="proof-mark proof-mark--award"><img src="assets/images/brands/bahrain-egovernment-excellence-award.png" width="856" height="430" alt=""><span><strong>eGovernment Awards</strong><small>2023 and 2025</small></span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section featured-work" id="projects" aria-labelledby="featured-title">
+        <div class="container">
+          <header class="section__header section__header--compact" data-reveal>
+            <div>
+              <p class="section__eyebrow">Selected work</p>
+              <h2 class="section__title" id="featured-title">From an operating need to a working system.</h2>
+            </div>
+            <div class="section__header-action"><a class="text-link" href="projects.html#projects">Explore all 12 projects <span aria-hidden="true">→</span></a></div>
           </header>
 
-          <ol class="timeline">
-            <li class="timeline__item" data-reveal>
-              <span class="timeline__marker" aria-hidden="true"></span>
-              <article class="timeline__content">
-                <div class="timeline__meta">
-                  <p class="timeline__period"><time datetime="2026-04">Apr 2026</time> - Present</p>
-                  <p class="timeline__organization">Bahrain Public Prosecution</p>
-                </div>
-                <h3 class="timeline__role">Senior ICT Specialist</h3>
-                <p class="timeline__description">Leading transformation initiatives across enterprise platforms, delivery governance, source control, release management, service visibility, and responsible AI-enabled solutions.</p>
-                <ul class="timeline__highlights">
-                  <li>Established portfolio, program, and project controls for approvals, reporting, escalation, and delivery visibility.</li>
-                  <li>Coordinates requirements, vendors, implementation controls, and knowledge transfer across strategic ICT work.</li>
-                </ul>
-              </article>
-            </li>
+          <div class="featured-grid">
+            <article class="showcase-card" data-reveal>
+              <figure class="showcase-card__media">
+                <picture>
+                  <source type="image/avif" srcset="assets/images/projects/01-ai-evidence-640.avif 640w, assets/images/projects/01-ai-evidence-1200.avif 1200w" sizes="(max-width: 48rem) calc(100vw - 2.25rem), 26rem">
+                  <source type="image/webp" srcset="assets/images/projects/01-ai-evidence-640.webp 640w, assets/images/projects/01-ai-evidence-1200.webp 1200w" sizes="(max-width: 48rem) calc(100vw - 2.25rem), 26rem">
+                  <img src="assets/images/projects/01-ai-evidence-1200.jpg" width="1200" height="675" loading="lazy" decoding="async" alt="Concept image of a developer reviewing code, representing an AI-assisted evidence workflow">
+                </picture>
+                <figcaption class="concept-label">Concept visual</figcaption>
+              </figure>
+              <div class="showcase-card__body">
+                <p class="showcase-card__category">AI &amp; Intelligence</p>
+                <h3>AI-Powered Digital Evidence Processing</h3>
+                <p>Privacy-focused local AI for reviewing image, video, and audio evidence without external uploads.</p>
+                <a class="showcase-card__link" href="project.html?id=ai-evidence">View project <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
 
-            <li class="timeline__item" data-reveal>
-              <span class="timeline__marker" aria-hidden="true"></span>
-              <article class="timeline__content">
-                <div class="timeline__meta">
-                  <p class="timeline__period"><time datetime="2025-02">Feb 2025</time> - <time datetime="2026-04">Apr 2026</time></p>
-                  <p class="timeline__organization">Bahrain Public Prosecution</p>
-                </div>
-                <h3 class="timeline__role">Senior Digital Forensics Analyst</h3>
-                <p class="timeline__description">Supported the development of an institutional digital-forensics capability, from laboratory readiness and evidence workflows to operational planning.</p>
-                <ul class="timeline__highlights">
-                  <li>Contributed to capability establishment from initial planning through pilot readiness.</li>
-                  <li>Prepared process documentation, technical specifications, and evaluation criteria for secure forensic operations.</li>
-                </ul>
-              </article>
-            </li>
+            <article class="showcase-card" data-reveal>
+              <figure class="showcase-card__media">
+                <picture>
+                  <source type="image/avif" srcset="assets/images/projects/02-3d-scene-640.avif 640w, assets/images/projects/02-3d-scene-1200.avif 1200w" sizes="(max-width: 48rem) calc(100vw - 2.25rem), 26rem">
+                  <source type="image/webp" srcset="assets/images/projects/02-3d-scene-640.webp 640w, assets/images/projects/02-3d-scene-1200.webp 1200w" sizes="(max-width: 48rem) calc(100vw - 2.25rem), 26rem">
+                  <img src="assets/images/projects/02-3d-scene-1200.jpg" width="1200" height="675" loading="lazy" decoding="async" alt="Concept image of 3D design software, representing interactive scene review">
+                </picture>
+                <figcaption class="concept-label">Concept visual</figcaption>
+              </figure>
+              <div class="showcase-card__body">
+                <p class="showcase-card__category">AI &amp; Intelligence</p>
+                <h3>Smart 3D Crime Scene Review</h3>
+                <p>Browser-based review that connects reconstructed spatial context with supporting evidence.</p>
+                <a class="showcase-card__link" href="project.html?id=3d-scene">View project <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
 
-            <li class="timeline__item" data-reveal>
-              <span class="timeline__marker" aria-hidden="true"></span>
-              <article class="timeline__content">
-                <div class="timeline__meta">
-                  <p class="timeline__period"><time datetime="2024-06">Jun 2024</time> - <time datetime="2025-02">Feb 2025</time></p>
-                  <p class="timeline__organization">Bahrain Institute of Pearls and Gemstones (DANAT)</p>
-                </div>
-                <h3 class="timeline__role">Full Stack Developer</h3>
-                <p class="timeline__description">Developed and supported integrated business applications while helping align CRM data, workflows, user requirements, and process change.</p>
-                <ul class="timeline__highlights">
-                  <li>Maintained and enhanced Next.js, FileMaker, and integration-based solutions.</li>
-                  <li>Supported digital workflows across finance, HR, procurement, and operations.</li>
-                </ul>
-              </article>
-            </li>
+            <article class="showcase-card" data-reveal>
+              <figure class="showcase-card__media">
+                <picture>
+                  <source type="image/avif" srcset="assets/images/projects/03-android-triage-640.avif 640w, assets/images/projects/03-android-triage-1200.avif 1200w" sizes="(max-width: 48rem) calc(100vw - 2.25rem), 26rem">
+                  <source type="image/webp" srcset="assets/images/projects/03-android-triage-640.webp 640w, assets/images/projects/03-android-triage-1200.webp 1200w" sizes="(max-width: 48rem) calc(100vw - 2.25rem), 26rem">
+                  <img src="assets/images/projects/03-android-triage-1200.jpg" width="1200" height="675" loading="lazy" decoding="async" alt="Concept image of a smartphone and laptop, representing Android forensic triage">
+                </picture>
+                <figcaption class="concept-label">Concept visual</figcaption>
+              </figure>
+              <div class="showcase-card__body">
+                <p class="showcase-card__category">Digital Forensics</p>
+                <h3>Android Digital Forensics Triage</h3>
+                <p>A Windows application for rapid collection and structured organization of Android artifacts.</p>
+                <a class="showcase-card__link" href="project.html?id=android-triage">View project <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
 
-            <li class="timeline__item" data-reveal>
-              <span class="timeline__marker" aria-hidden="true"></span>
-              <article class="timeline__content">
-                <div class="timeline__meta">
-                  <p class="timeline__period"><time datetime="2021-10">Oct 2021</time> - <time datetime="2024-05">May 2024</time></p>
-                  <p class="timeline__organization">Bahrain Airport Services</p>
-                </div>
-                <h3 class="timeline__role">Software Developer, Project Manager</h3>
-                <p class="timeline__description">Planned and delivered operational technology projects while engineering .NET applications, integrations, automations, and reporting solutions.</p>
-                <ul class="timeline__highlights">
-                  <li>Managed cross-functional delivery across operational, commercial, billing, and e-signature systems.</li>
-                  <li>Combined software delivery, DevOps, and business intelligence to improve operational efficiency.</li>
-                </ul>
-              </article>
-            </li>
+      <section class="section outcomes" id="impact" aria-labelledby="impact-title">
+        <div class="container">
+          <header class="section__header section__header--compact" data-reveal>
+            <div>
+              <p class="section__eyebrow">Selected impact</p>
+              <h2 class="section__title" id="impact-title">Useful outcomes, responsibly presented.</h2>
+            </div>
+          </header>
+
+          <div class="outcome-grid">
+            <article class="outcome-card" data-reveal><span>01</span><h3>Transformation governance</h3><p>Clearer decisions and stronger delivery visibility.</p></article>
+            <article class="outcome-card" data-reveal><span>02</span><h3>AI-enabled workflows</h3><p>Faster access to useful, reviewable insight.</p></article>
+            <article class="outcome-card" data-reveal><span>03</span><h3>Forensics capability</h3><p>A governed path from planning to pilot readiness.</p></article>
+            <article class="outcome-card" data-reveal><span>04</span><h3>Operational automation</h3><p>More reliable operations with less repetitive work.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section career-preview" id="experience" aria-labelledby="career-title">
+        <div class="container career-preview__grid">
+          <header data-reveal>
+            <p class="section__eyebrow">Experience</p>
+            <h2 class="section__title" id="career-title">Engineering depth, delivery discipline.</h2>
+            <a class="button button--secondary" href="experience.html">View full experience</a>
+          </header>
+
+          <ol class="career-snapshot" data-reveal>
+            <li><time datetime="2026">2026—Now</time><span><strong>Senior ICT Specialist</strong><small>Bahrain Public Prosecution</small></span></li>
+            <li><time datetime="2025">2025—2026</time><span><strong>Senior Digital Forensics Analyst</strong><small>Bahrain Public Prosecution</small></span></li>
+            <li><time datetime="2024">2024—2025</time><span><strong>Full Stack Developer</strong><small>Bahrain Institute of Pearls and Gemstones</small></span></li>
+            <li><time datetime="2021">2021—2024</time><span><strong>Software Developer, Project Manager</strong><small>Bahrain Airport Services</small></span></li>
           </ol>
         </div>
       </section>
 
-      <section class="section impact" id="impact" aria-labelledby="impact-title" data-section>
-        <div class="container">
-          <header class="section__header" data-reveal>
-            <p class="section__eyebrow">02 <span aria-hidden="true">/</span> Selected impact</p>
-            <h2 class="section__title" id="impact-title">Systems that improve how work moves.</h2>
-            <p class="section__intro">Selected outcomes are summarized at an executive level to respect the sensitivity of the environments in which they were delivered.</p>
-          </header>
-
-          <div class="impact-grid">
-            <article class="impact-card" data-reveal>
-              <p class="impact-card__index" aria-hidden="true">01</p>
-              <h3 class="impact-card__title">Transformation governance</h3>
-              <p class="impact-card__description">Structured portfolio, program, and project controls to connect approvals, ownership, reporting, escalation, and implementation discipline.</p>
-              <p class="impact-card__result"><span class="impact-card__label">Outcome</span> Clearer decisions and stronger delivery visibility.</p>
-            </article>
-
-            <article class="impact-card" data-reveal>
-              <p class="impact-card__index" aria-hidden="true">02</p>
-              <h3 class="impact-card__title">AI-enabled workflows</h3>
-              <p class="impact-card__description">Translated high-value operational use cases into controlled AI workflows for media understanding, language tasks, reporting, and decision support.</p>
-              <p class="impact-card__result"><span class="impact-card__label">Outcome</span> Faster access to useful, reviewable insight.</p>
-            </article>
-
-            <article class="impact-card" data-reveal>
-              <p class="impact-card__index" aria-hidden="true">03</p>
-              <h3 class="impact-card__title">Digital-forensics capability</h3>
-              <p class="impact-card__description">Helped shape laboratory readiness, evidence workflows, standard operating procedures, procurement criteria, and implementation planning.</p>
-              <p class="impact-card__result"><span class="impact-card__label">Outcome</span> A governed path from planning to pilot readiness.</p>
-            </article>
-
-            <article class="impact-card" data-reveal>
-              <p class="impact-card__index" aria-hidden="true">04</p>
-              <h3 class="impact-card__title">Operational automation</h3>
-              <p class="impact-card__description">Delivered .NET applications, integrations, automation, DevOps, and business-intelligence solutions for operational teams.</p>
-              <p class="impact-card__result"><span class="impact-card__label">Outcome</span> More reliable operations with less repetitive manual work.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section projects" id="projects" aria-labelledby="projects-title" data-section data-active-project-category="ai">
-        <div class="container">
-          <header class="section__header" data-reveal>
-            <p class="section__eyebrow">03 <span aria-hidden="true">/</span> Projects</p>
-            <h2 class="section__title" id="projects-title">Selected systems, platforms, and transformation initiatives.</h2>
-            <p class="section__intro">A practical portfolio spanning applied AI, digital forensics, enterprise platforms, operational resilience, and technology governance. Sensitive implementations are presented at a capability level.</p>
-          </header>
-
-          <div class="project-tabs" id="project-categories" role="tablist" aria-label="Project categories" data-project-filter data-reveal>
-            <button class="project-tab" id="project-tab-ai" type="button" role="tab" aria-selected="true" aria-controls="projects-panel" tabindex="0" data-project-category="ai">
-              <span>AI &amp; Intelligence</span><span class="project-tab__count" aria-hidden="true">3</span>
-            </button>
-            <button class="project-tab" id="project-tab-forensics" type="button" role="tab" aria-selected="false" aria-controls="projects-panel" tabindex="-1" data-project-category="forensics">
-              <span>Digital Forensics</span><span class="project-tab__count" aria-hidden="true">3</span>
-            </button>
-            <button class="project-tab" id="project-tab-enterprise" type="button" role="tab" aria-selected="false" aria-controls="projects-panel" tabindex="-1" data-project-category="enterprise">
-              <span>Enterprise Platforms</span><span class="project-tab__count" aria-hidden="true">3</span>
-            </button>
-            <button class="project-tab" id="project-tab-transformation" type="button" role="tab" aria-selected="false" aria-controls="projects-panel" tabindex="-1" data-project-category="transformation">
-              <span>Transformation &amp; Delivery</span><span class="project-tab__count" aria-hidden="true">3</span>
-            </button>
-          </div>
-          <p class="visually-hidden" role="status" aria-live="polite" aria-atomic="true" data-project-status>3 projects shown in AI &amp; Intelligence.</p>
-
-          <div class="projects-grid" id="projects-panel" role="tabpanel" aria-labelledby="project-tab-ai" tabindex="0">
-            <article class="project-card" data-project-group="ai" data-reveal>
-              <figure class="project-card__media">
-                <img class="project-card__image" src="assets/images/projects/01-ai-evidence.svg" width="1200" height="675" loading="lazy" decoding="async" alt="Abstract technical illustration of an AI-assisted digital evidence workflow">
-              </figure>
-              <div class="project-card__body">
-                <div class="project-card__meta">
-                  <span class="project-card__index" aria-hidden="true">01</span>
-                  <p class="project-card__role">Lead Developer / AI Solutions Engineer</p>
-                </div>
-                <h3 class="project-card__title">AI-Powered Digital Evidence Processing Platform</h3>
-                <p class="project-card__description">A privacy-focused local-AI platform that processes image, video, and audio evidence without sending sensitive material to external services.</p>
-                <ul class="project-card__technologies tag-list" aria-label="Technologies used">
-                  <li class="tag">.NET 10 MVC</li><li class="tag">Python</li><li class="tag">Ollama</li><li class="tag">Qwen3-VL</li><li class="tag">Whisper</li><li class="tag">RAG</li><li class="tag">PostgreSQL / SQL Server</li><li class="tag">Bootstrap 5</li>
-                </ul>
-                <details class="project-card__details">
-                  <summary>View project capabilities</summary>
-                  <ul>
-                    <li>Image and video captioning</li><li>Speech-to-text and speaker diarization</li><li>Arabic and English translation</li><li>Evidence classification and tagging</li><li>Automated summaries and reports</li><li>Semantic search and RAG-based question answering</li>
-                  </ul>
-                </details>
-              </div>
-            </article>
-
-            <article class="project-card" data-project-group="ai" data-reveal>
-              <figure class="project-card__media">
-                <img class="project-card__image" src="assets/images/projects/02-3d-scene.svg" width="1200" height="675" loading="lazy" decoding="async" alt="Abstract wireframe illustration of an interactive 3D scene review platform">
-              </figure>
-              <div class="project-card__body">
-                <div class="project-card__meta"><span class="project-card__index" aria-hidden="true">02</span><p class="project-card__role">Lead Developer / Solution Architect</p></div>
-                <h3 class="project-card__title">Smart 3D Crime Scene Review Platform</h3>
-                <p class="project-card__description">A browser-based environment for authorized teams to review reconstructed scenes interactively and connect spatial context with supporting evidence.</p>
-                <ul class="project-card__technologies tag-list" aria-label="Technologies used">
-                  <li class="tag">.NET 10 MVC</li><li class="tag">Three.js</li><li class="tag">WebGL</li><li class="tag">SQL Server</li><li class="tag">Ollama</li><li class="tag">Qwen3-VL</li><li class="tag">Whisper</li>
-                </ul>
-                <details class="project-card__details"><summary>View project capabilities</summary><ul><li>360-degree navigation and 3D visualization</li><li>Evidence and object markers</li><li>Notes, attachments, and scene mapping</li><li>Recordings and transcription</li><li>AI-assisted image analysis and question answering</li><li>Controlled browser access for authorized users</li></ul></details>
-              </div>
-            </article>
-
-            <article class="project-card" data-project-group="forensics" data-reveal>
-              <figure class="project-card__media">
-                <img class="project-card__image" src="assets/images/projects/03-android-triage.svg" width="1200" height="675" loading="lazy" decoding="async" alt="Abstract technical illustration of an Android device triage workflow">
-              </figure>
-              <div class="project-card__body">
-                <div class="project-card__meta"><span class="project-card__index" aria-hidden="true">03</span><p class="project-card__role">Developer / Digital Forensics Specialist</p></div>
-                <h3 class="project-card__title">Android Digital Forensics Triage Application</h3>
-                <p class="project-card__description">A Windows application for fast preliminary collection and structured organization of Android device information and artifacts.</p>
-                <ul class="project-card__technologies tag-list" aria-label="Technologies used"><li class="tag">.NET</li><li class="tag">ADB</li><li class="tag">Android</li><li class="tag">Digital forensics</li></ul>
-                <details class="project-card__details"><summary>View project capabilities</summary><ul><li>ADB-based acquisition and device information collection</li><li>Media and shared-storage extraction</li><li>Wi-Fi, Bluetooth, and application artifact review</li><li>WhatsApp artifact processing</li><li>Case-based organization and an automated triage workflow</li></ul></details>
-              </div>
-            </article>
-
-            <article class="project-card" data-project-group="ai" data-reveal>
-              <figure class="project-card__media">
-                <img class="project-card__image" src="assets/images/projects/04-executive-analytics.svg" width="1200" height="675" loading="lazy" decoding="async" alt="Abstract dashboard illustration representing executive analytics and AI insights">
-              </figure>
-              <div class="project-card__body">
-                <div class="project-card__meta"><span class="project-card__index" aria-hidden="true">04</span><p class="project-card__role">Lead Developer / AI Solutions Engineer</p></div>
-                <h3 class="project-card__title">Executive Analytics &amp; AI Decision-Support Dashboard</h3>
-                <p class="project-card__description">An executive dashboard that consolidates operational statistics, geographic context, trends, and AI-assisted insight in one decision-support view.</p>
-                <ul class="project-card__technologies tag-list" aria-label="Technologies used"><li class="tag">.NET 10 MVC</li><li class="tag">ECharts</li><li class="tag">SQL Server</li><li class="tag">AI / LLM integration</li></ul>
-                <details class="project-card__details"><summary>View project capabilities</summary><ul><li>KPI and operational-statistics dashboards</li><li>Dynamic filters and geographic analytics</li><li>Trend analysis and AI-generated insights</li><li>Natural-language data querying</li></ul></details>
-              </div>
-            </article>
-
-            <article class="project-card" data-project-group="enterprise" data-reveal>
-              <figure class="project-card__media">
-                <img class="project-card__image" src="assets/images/projects/05-monitoring.svg" width="1200" height="675" loading="lazy" decoding="async" alt="Abstract illustration of servers connected to an application monitoring dashboard">
-              </figure>
-              <div class="project-card__body">
-                <div class="project-card__meta"><span class="project-card__index" aria-hidden="true">05</span><p class="project-card__role">Full-Stack Developer</p></div>
-                <h3 class="project-card__title">Enterprise Server &amp; Application Monitoring System</h3>
-                <p class="project-card__description">A centralized internal platform for monitoring the availability and health of servers, applications, websites, and services.</p>
-                <ul class="project-card__technologies tag-list" aria-label="Technologies used"><li class="tag">.NET 10 MVC</li><li class="tag">SQL Server</li><li class="tag">SMTP</li><li class="tag">Windows Server</li><li class="tag">IIS</li></ul>
-                <details class="project-card__details"><summary>View project capabilities</summary><ul><li>Server availability and website-health checks</li><li>Windows service monitoring</li><li>Status history and centralized visibility</li><li>Automated email alerts</li></ul></details>
-              </div>
-            </article>
-
-            <article class="project-card" data-project-group="enterprise" data-reveal>
-              <figure class="project-card__media">
-                <img class="project-card__image" src="assets/images/projects/06-authentication.svg" width="1200" height="675" loading="lazy" decoding="async" alt="Abstract identity network illustration representing enterprise authentication and single sign-on">
-              </figure>
-              <div class="project-card__body">
-                <div class="project-card__meta"><span class="project-card__index" aria-hidden="true">06</span><p class="project-card__role">Backend Developer / Solution Architect</p></div>
-                <h3 class="project-card__title">Enterprise Active Directory Authentication &amp; SSO Service</h3>
-                <p class="project-card__description">A centralized authentication service that gives internal applications a consistent, controlled route to enterprise identity and access.</p>
-                <ul class="project-card__technologies tag-list" aria-label="Technologies used"><li class="tag">.NET 10 Web API</li><li class="tag">Active Directory</li><li class="tag">LDAP</li><li class="tag">ASP.NET Identity</li><li class="tag">Windows Authentication</li></ul>
-                <details class="project-card__details"><summary>View project capabilities</summary><ul><li>Active Directory authentication and SSO</li><li>LDAP integration and AD group validation</li><li>Role-based access control</li><li>Centralized API integration across multiple applications</li></ul></details>
-              </div>
-            </article>
-
-            <article class="project-card" data-project-group="forensics" data-reveal>
-              <figure class="project-card__media">
-                <img class="project-card__image" src="assets/images/projects/07-case-management.svg" width="1200" height="675" loading="lazy" decoding="async" alt="Abstract workflow illustration representing digital forensics case management">
-              </figure>
-              <div class="project-card__body">
-                <div class="project-card__meta"><span class="project-card__index" aria-hidden="true">07</span><p class="project-card__role">Technical Lead / Digital Forensics SME</p></div>
-                <h3 class="project-card__title">Digital Forensics Laboratory Case Management System</h3>
-                <p class="project-card__description">Design and implementation support for a case-management platform aligned with the operating model of a newly established digital-forensics laboratory.</p>
-                <ul class="project-card__technologies tag-list" aria-label="Practice areas"><li class="tag">Workflow design</li><li class="tag">Requirements</li><li class="tag">Roles &amp; permissions</li><li class="tag">Acceptance</li></ul>
-                <details class="project-card__details"><summary>View project contributions</summary><ul><li>Defined operational workflows and translated them into system requirements</li><li>Shaped case and evidence flows, roles, and permissions</li><li>Supported implementation planning and acceptance</li><li>Connected technical delivery with laboratory operations</li></ul></details>
-              </div>
-            </article>
-
-            <article class="project-card" data-project-group="forensics" data-reveal>
-              <figure class="project-card__media">
-                <img class="project-card__image" src="assets/images/projects/08-lab-establishment.svg" width="1200" height="675" loading="lazy" decoding="async" alt="Abstract technical illustration representing a connected digital forensics laboratory">
-              </figure>
-              <div class="project-card__body">
-                <div class="project-card__meta"><span class="project-card__index" aria-hidden="true">08</span><p class="project-card__role">Founding Team Member / Senior Digital Forensics Specialist</p></div>
-                <h3 class="project-card__title">Digital Forensics Laboratory Establishment</h3>
-                <p class="project-card__description">Founding-team contribution to the planning, readiness, and operational integration of a new digital-forensics laboratory.</p>
-                <ul class="project-card__technologies tag-list" aria-label="Practice areas"><li class="tag">Laboratory readiness</li><li class="tag">SOPs</li><li class="tag">Procurement</li><li class="tag">Infrastructure planning</li></ul>
-                <details class="project-card__details"><summary>View project contributions</summary><ul><li>Evaluated technologies and supported tool procurement</li><li>Developed workflows and standard operating procedures</li><li>Supported infrastructure planning for mobile and computer forensics</li><li>Contributed to pilot readiness and IT-operations integration</li></ul></details>
-              </div>
-            </article>
-
-            <article class="project-card" data-project-group="transformation" data-reveal>
-              <figure class="project-card__media">
-                <img class="project-card__image" src="assets/images/projects/09-transformation.svg" width="1200" height="675" loading="lazy" decoding="async" alt="Abstract roadmap illustration representing a government digital transformation portfolio">
-              </figure>
-              <div class="project-card__body">
-                <div class="project-card__meta"><span class="project-card__index" aria-hidden="true">09</span><p class="project-card__role">Digital Transformation Lead / ICT Project Manager</p></div>
-                <h3 class="project-card__title">Government Digital Transformation Portfolio</h3>
-                <p class="project-card__description">Leadership of a coordinated transformation portfolio spanning software, AI, infrastructure, cybersecurity, and service modernization.</p>
-                <ul class="project-card__technologies tag-list" aria-label="Practice areas"><li class="tag">Portfolio strategy</li><li class="tag">Governance</li><li class="tag">Change management</li><li class="tag">Stakeholder coordination</li></ul>
-                <details class="project-card__details"><summary>View project contributions</summary><ul><li>Built the roadmap, portfolio structure, and prioritization approach</li><li>Aligned initiatives with strategy and lifecycle standards</li><li>Supported responsible AI adoption and organizational change</li><li>Coordinated stakeholders across transformation workstreams</li></ul></details>
-              </div>
-            </article>
-
-            <article class="project-card" data-project-group="transformation" data-reveal>
-              <figure class="project-card__media">
-                <img class="project-card__image" src="assets/images/projects/10-governance.svg" width="1200" height="675" loading="lazy" decoding="async" alt="Abstract lifecycle diagram representing project and development governance">
-              </figure>
-              <div class="project-card__body">
-                <div class="project-card__meta"><span class="project-card__index" aria-hidden="true">10</span><p class="project-card__role">ICT Project Manager / Digital Transformation Lead</p></div>
-                <h3 class="project-card__title">Project Management &amp; Development Governance Framework</h3>
-                <p class="project-card__description">A lightweight delivery standard for how technology projects are proposed, assessed, developed, approved, delivered, and monitored.</p>
-                <ul class="project-card__technologies tag-list" aria-label="Practice areas"><li class="tag">Project lifecycle</li><li class="tag">Risk &amp; issues</li><li class="tag">Change control</li><li class="tag">Portfolio reporting</li></ul>
-                <details class="project-card__details"><summary>View framework components</summary><ul><li>Initiation, requirements, and prioritization</li><li>Delivery lifecycle and change control</li><li>Risk, issue, and status reporting</li><li>Defined roles and portfolio-level reporting</li></ul></details>
-              </div>
-            </article>
-
-            <article class="project-card" data-project-group="transformation" data-reveal>
-              <figure class="project-card__media">
-                <img class="project-card__image" src="assets/images/projects/11-devops.svg" width="1200" height="675" loading="lazy" decoding="async" alt="Abstract pipeline illustration representing an Azure DevOps delivery environment">
-              </figure>
-              <div class="project-card__body">
-                <div class="project-card__meta"><span class="project-card__index" aria-hidden="true">11</span><p class="project-card__role">Implementation Lead</p></div>
-                <h3 class="project-card__title">Azure DevOps Software Delivery Environment</h3>
-                <p class="project-card__description">Introduced a more controlled, visible, and repeatable software-delivery environment using Azure DevOps practices.</p>
-                <ul class="project-card__technologies tag-list" aria-label="Technologies and practices used"><li class="tag">Azure DevOps</li><li class="tag">Git</li><li class="tag">Pull requests</li><li class="tag">CI/CD</li><li class="tag">Release management</li></ul>
-                <details class="project-card__details"><summary>View project contributions</summary><ul><li>Established Git repositories and branching conventions</li><li>Introduced pull requests and main-branch protection</li><li>Connected work items to a standardized delivery lifecycle</li><li>Established CI/CD foundations and release-management practices</li></ul></details>
-              </div>
-            </article>
-
-            <article class="project-card" data-project-group="enterprise" data-reveal>
-              <figure class="project-card__media">
-                <img class="project-card__image" src="assets/images/projects/12-password-vault.svg" width="1200" height="675" loading="lazy" decoding="async" alt="Abstract vault illustration representing secure multi-user password management">
-              </figure>
-              <div class="project-card__body">
-                <div class="project-card__meta"><span class="project-card__index" aria-hidden="true">12</span><p class="project-card__role">Full-Stack Developer</p></div>
-                <h3 class="project-card__title">Multi-User Secure Password Management System</h3>
-                <p class="project-card__description">A secure internal credential vault with isolated user spaces, controlled authorization, and an audit-conscious architecture.</p>
-                <ul class="project-card__technologies tag-list" aria-label="Technologies used"><li class="tag">.NET 10 MVC</li><li class="tag">ASP.NET Identity</li><li class="tag">SQL Server / PostgreSQL</li></ul>
-                <details class="project-card__details"><summary>View project capabilities</summary><ul><li>Multi-user authentication and isolated credential vaults</li><li>Encryption at rest</li><li>Role-based access control</li><li>Secure credential management with an audit-friendly architecture</li></ul></details>
-              </div>
-            </article>
-          </div>
-
-          <div class="projects__back">
-            <a class="button button--secondary" href="#project-categories" data-project-back>Back to categories</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section expertise" id="expertise" aria-labelledby="expertise-title" data-section>
-        <div class="container">
-          <header class="section__header" data-reveal>
-            <p class="section__eyebrow">04 <span aria-hidden="true">/</span> Expertise</p>
-            <h2 class="section__title" id="expertise-title">Working across strategy and execution.</h2>
-            <p class="section__intro">A multidisciplinary toolkit for moving initiatives from an operating need to a well-governed, maintainable solution.</p>
-          </header>
-
-          <div class="expertise-grid">
-            <article class="expertise-card" data-reveal>
-              <p class="expertise-card__number" aria-hidden="true">01</p>
-              <h3 class="expertise-card__title">Transformation &amp; governance</h3>
-              <ul class="expertise-card__list tag-list">
-                <li class="tag">Portfolio structuring</li>
-                <li class="tag">Program governance</li>
-                <li class="tag">IT project management</li>
-                <li class="tag">Vendor coordination</li>
-                <li class="tag">Requirements &amp; controls</li>
-              </ul>
-            </article>
-
-            <article class="expertise-card" data-reveal>
-              <p class="expertise-card__number" aria-hidden="true">02</p>
-              <h3 class="expertise-card__title">Software &amp; integration</h3>
-              <ul class="expertise-card__list tag-list">
-                <li class="tag">.NET</li>
-                <li class="tag">Python</li>
-                <li class="tag">REST APIs</li>
-                <li class="tag">SQL Server</li>
-                <li class="tag">Oracle &amp; MySQL</li>
-              </ul>
-            </article>
-
-            <article class="expertise-card" data-reveal>
-              <p class="expertise-card__number" aria-hidden="true">03</p>
-              <h3 class="expertise-card__title">AI &amp; applied intelligence</h3>
-              <ul class="expertise-card__list tag-list">
-                <li class="tag">Azure AI Foundry</li>
-                <li class="tag">RAG</li>
-                <li class="tag">Transformers</li>
-                <li class="tag">OCR</li>
-                <li class="tag">Transcription &amp; translation</li>
-              </ul>
-            </article>
-
-            <article class="expertise-card" data-reveal>
-              <p class="expertise-card__number" aria-hidden="true">04</p>
-              <h3 class="expertise-card__title">Delivery &amp; operations</h3>
-              <ul class="expertise-card__list tag-list">
-                <li class="tag">Azure DevOps</li>
-                <li class="tag">CI/CD</li>
-                <li class="tag">Release management</li>
-                <li class="tag">Automation</li>
-                <li class="tag">Service monitoring</li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section credentials" id="credentials" aria-labelledby="credentials-title" data-section>
-        <div class="container">
-          <header class="section__header" data-reveal>
-            <p class="section__eyebrow">05 <span aria-hidden="true">/</span> Credentials</p>
-            <h2 class="section__title" id="credentials-title">Current credentials, recognized outcomes.</h2>
-            <p class="section__intro">Active certifications reinforce a practice grounded in project leadership, cloud AI, and applied artificial intelligence.</p>
-          </header>
-
-          <div class="credentials__group" data-reveal>
-            <div class="subsection-heading">
-              <p class="subsection-heading__index" aria-hidden="true">A</p>
-              <h3 class="subsection-heading__title">Active certifications</h3>
-            </div>
-            <div class="credentials-grid">
-              <article class="credential-card">
-                <p class="credential-card__type">Project leadership</p>
-                <h4 class="credential-card__title">Project Management Professional (PMP)<sup>®</sup></h4>
-                <p class="credential-card__issuer">Project Management Institute</p>
-                <dl class="credential-card__meta">
-                  <div>
-                    <dt>Earned</dt>
-                    <dd><time datetime="2026-06-05">05 Jun 2026</time></dd>
-                  </div>
-                  <div>
-                    <dt>Valid through</dt>
-                    <dd><time datetime="2029-06-05">05 Jun 2029</time></dd>
-                  </div>
-                </dl>
-                <p class="credential-card__status"><span aria-hidden="true"></span>Active credential</p>
-              </article>
-
-              <article class="credential-card">
-                <p class="credential-card__type">Cloud AI engineering</p>
-                <h4 class="credential-card__title">Azure AI Engineer Associate</h4>
-                <p class="credential-card__issuer">Microsoft</p>
-                <dl class="credential-card__meta">
-                  <div>
-                    <dt>Earned</dt>
-                    <dd><time datetime="2026-02-22">22 Feb 2026</time></dd>
-                  </div>
-                  <div>
-                    <dt>Valid through</dt>
-                    <dd><time datetime="2027-02-23">23 Feb 2027</time></dd>
-                  </div>
-                </dl>
-                <p class="credential-card__status"><span aria-hidden="true"></span>Active credential</p>
-              </article>
-
-              <article class="credential-card">
-                <p class="credential-card__type">Applied artificial intelligence</p>
-                <h4 class="credential-card__title">AWS Certified AI Practitioner</h4>
-                <p class="credential-card__issuer">Amazon Web Services</p>
-                <dl class="credential-card__meta">
-                  <div>
-                    <dt>Earned</dt>
-                    <dd><time datetime="2026-06-20">20 Jun 2026</time></dd>
-                  </div>
-                  <div>
-                    <dt>Valid through</dt>
-                    <dd><time datetime="2029-06-20">20 Jun 2029</time></dd>
-                  </div>
-                </dl>
-                <p class="credential-card__status"><span aria-hidden="true"></span>Active credential</p>
-              </article>
-            </div>
-          </div>
-
-          <div class="credentials__group" data-reveal>
-            <div class="subsection-heading">
-              <p class="subsection-heading__index" aria-hidden="true">B</p>
-              <h3 class="subsection-heading__title">Awards</h3>
-            </div>
-            <div class="recognition-grid">
-              <article class="recognition-card">
-                <p class="recognition-card__year">2023</p>
-                <h4 class="recognition-card__title">Bahrain eGovernment Excellence Award</h4>
-                <p class="recognition-card__detail">Best Integrated eServices Award <span aria-hidden="true">·</span> Private Sector</p>
-              </article>
-              <article class="recognition-card">
-                <p class="recognition-card__year">2025</p>
-                <h4 class="recognition-card__title">Bahrain eGovernment Excellence Award</h4>
-                <p class="recognition-card__detail">Best Integrated eServices Award <span aria-hidden="true">·</span> Private Sector</p>
-              </article>
-            </div>
-          </div>
-
-          <div class="credentials__group" data-reveal>
-            <div class="subsection-heading">
-              <p class="subsection-heading__index" aria-hidden="true">C</p>
-              <h3 class="subsection-heading__title">Foundation</h3>
-            </div>
-            <div class="foundation-grid">
-              <article class="foundation-card">
-                <p class="foundation-card__label">Education</p>
-                <h4 class="foundation-card__title">B.Sc. in Computer Science</h4>
-                <p class="foundation-card__detail">University of Bahrain <span aria-hidden="true">·</span> 2014-2020</p>
-              </article>
-              <article class="foundation-card">
-                <p class="foundation-card__label">Languages</p>
-                <h4 class="foundation-card__title">Arabic &amp; English</h4>
-                <ul class="foundation-card__list">
-                  <li><span>Arabic</span><strong>Native</strong></li>
-                  <li><span>English</span><strong>Full professional proficiency</strong></li>
-                </ul>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section contact" id="contact" aria-labelledby="contact-title" data-section>
-        <div class="container">
-          <div class="contact__panel" data-reveal>
-            <div class="contact__content">
-              <p class="section__eyebrow">06 <span aria-hidden="true">/</span> Contact</p>
-              <h2 class="contact__title" id="contact-title">Let’s connect.</h2>
-              <p class="contact__intro">If you would like to discuss an opportunity, project, or collaboration, feel free to contact me by email.</p>
-              <a class="contact__email" href="mailto:osama.e96@outlook.com">osama.e96@outlook.com</a>
-            </div>
-            <div class="contact__actions">
-              <a class="button button--primary" href="mailto:osama.e96@outlook.com">Send an email</a>
-              <button class="button button--secondary" type="button" data-copy-email data-email="osama.e96@outlook.com" aria-describedby="copy-status">Copy email address</button>
-              <p class="copy-status" id="copy-status" role="status" aria-live="polite" aria-atomic="true"></p>
-              <label class="visually-hidden" for="email-copy-source">Email address for copying</label>
-              <textarea class="email-copy-source visually-hidden" id="email-copy-source" readonly tabindex="-1">osama.e96@outlook.com</textarea>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
 
     <footer class="site-footer">
       <div class="site-footer__inner container">
         <p class="site-footer__note"><span class="visually-hidden">Copyright</span><span aria-hidden="true">©</span> 2026 Osama Ebrahim Hasan</p>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="projects.html">Projects</a>
+          <a href="experience.html">Experience</a>
+          <a href="credentials.html">Credentials</a>
+          <a href="contact.html">Contact</a>
+          <a href="assets/documents/osama-ebrahim-hasan-resume.pdf" download>Résumé</a>
+        </nav>
       </div>
     </footer>
   </body>

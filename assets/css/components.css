@@ -4,9 +4,17 @@
     min-height: 2.75rem;
     align-items: center;
     gap: var(--space-3);
+    padding: 0;
+    background: transparent;
     color: var(--color-text);
+    cursor: pointer;
     font-weight: 700;
     text-decoration: none;
+  }
+
+  .site-brand:hover .site-brand__mark {
+    background: var(--color-cyan-soft);
+    box-shadow: 0.35rem 0.35rem 0 rgba(90, 188, 235, 0.22);
   }
 
   .site-brand__mark {
@@ -20,6 +28,9 @@
     font-weight: 800;
     letter-spacing: 0.12em;
     box-shadow: 0.25rem 0.25rem 0 var(--color-cyan-soft);
+    transition:
+      background-color var(--duration-fast) var(--ease-out),
+      box-shadow var(--duration-fast) var(--ease-out);
   }
 
   .site-brand__name {

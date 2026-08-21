@@ -5,15 +5,11 @@
   const status = document.querySelector('#copy-status');
   const source = document.querySelector('#email-copy-source');
 
-  if (!buttons.length || !status || !source) {
-    return;
-  }
-
-  status.setAttribute('role', 'status');
-  status.setAttribute('aria-live', 'polite');
-  status.setAttribute('aria-atomic', 'true');
-
   const sourceValue = () => {
+    if (!source) {
+      return '';
+    }
+
     if ('value' in source) {
       return source.value.trim();
     }
@@ -22,7 +18,7 @@
   };
 
   const fallbackCopy = () => {
-    if (typeof source.select !== 'function') {
+    if (!source || typeof source.select !== 'function') {
       return false;
     }
 
@@ -73,36 +69,103 @@
     return fallbackCopy();
   };
 
-  buttons.forEach((button) => {
-    const label = button.querySelector('[data-copy-label]') || button;
-    const originalLabel = label.textContent;
-    let restoreTimer = 0;
+  if (buttons.length && status && source) {
+    status.setAttribute('role', 'status');
+    status.setAttribute('aria-live', 'polite');
+    status.setAttribute('aria-atomic', 'true');
 
-    button.addEventListener('click', async () => {
-      const attributeEmail = button.dataset.email || button.getAttribute('data-copy-email');
-      const email =
-        attributeEmail && attributeEmail !== 'true' ? attributeEmail.trim() : sourceValue();
+    buttons.forEach((button) => {
+      const label = button.querySelector('[data-copy-label]') || button;
+      const originalLabel = label.textContent;
+      let restoreTimer = 0;
 
-      window.clearTimeout(restoreTimer);
-      button.disabled = true;
+      button.addEventListener('click', async () => {
+        const attributeEmail = button.dataset.email || button.getAttribute('data-copy-email');
+        const email =
+          attributeEmail && attributeEmail !== 'true' ? attributeEmail.trim() : sourceValue();
 
-      const copied = email ? await copyEmail(email) : false;
+        window.clearTimeout(restoreTimer);
+        button.disabled = true;
 
-      if (copied) {
-        label.textContent = 'Copied';
-        status.textContent = 'Email address copied to the clipboard.';
-      } else {
-        label.textContent = 'Copy failed';
-        status.textContent =
-          'Unable to copy automatically. Use the email link to copy it manually.';
-      }
+        const copied = email ? await copyEmail(email) : false;
 
-      button.disabled = false;
-      button.focus();
+        if (copied) {
+          label.textContent = 'Copied';
+          status.textContent = 'Email address copied to the clipboard.';
+        } else {
+          label.textContent = 'Copy failed';
+          status.textContent =
+            'Unable to copy automatically. Use the email link to copy it manually.';
+        }
 
-      restoreTimer = window.setTimeout(() => {
-        label.textContent = originalLabel;
-      }, 2400);
+        button.disabled = false;
+        button.focus();
+
+        restoreTimer = window.setTimeout(() => {
+          label.textContent = originalLabel;
+        }, 2400);
+      });
     });
+  }
+
+  const form = document.querySelector('[data-contact-form]');
+
+  if (!form) {
+    return;
+  }
+
+  const submitButton = form.querySelector('[data-contact-submit]');
+  const formStatus = form.querySelector('[data-contact-status]');
+  const originalSubmitLabel = submitButton ? submitButton.textContent : '';
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      const firstInvalidField = form.querySelector(':invalid');
+      firstInvalidField?.focus();
+      return;
+    }
+
+    const formData = new FormData(form);
+    const recipient = form.dataset.recipient?.trim();
+    const subject = String(formData.get('subject') || '').trim();
+    const contactType = String(formData.get('contactType') || '').trim();
+    const message = String(formData.get('message') || '').trim();
+
+    if (!recipient) {
+      if (formStatus) {
+        formStatus.textContent = 'The email address is unavailable. Please use the direct email link.';
+      }
+      return;
+    }
+
+    const emailBody = [
+      'Hello Osama,',
+      '',
+      message,
+      '',
+      `Contact type: ${contactType}`,
+    ].join('\r\n');
+    const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(`[${contactType}] ${subject}`)}&body=${encodeURIComponent(emailBody)}`;
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Opening email app…';
+    }
+
+    if (formStatus) {
+      formStatus.textContent = 'Your email app should open with the message prepared.';
+    }
+
+    window.location.href = mailtoUrl;
+
+    window.setTimeout(() => {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalSubmitLabel;
+      }
+    }, 1200);
   });
 })();
